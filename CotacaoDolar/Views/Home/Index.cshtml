@@ -1,0 +1,32 @@
+﻿@model CotacaoMoeda;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">R$</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Reais" aria-label="Reais" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="col-md-1">
+            <i class="fas fa-exchange-alt fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">$</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Dólares" aria-label="Dólares" aria-describedby="basic-addon1">
+            </div>
+        </div>
+    </div>
+    <p>Cotação de comprar: @Model.CotacaoCompra</p>
+    <p>Cotação de venda: @Model.CotacaoVenda</p>
+</div>
