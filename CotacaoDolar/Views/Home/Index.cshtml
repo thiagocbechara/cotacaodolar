@@ -1,32 +1,37 @@
 ﻿@model CotacaoMoeda;
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Cotação do Dolar";
 }
 
+@section Scripts{
+    @*<script src="~/lib/simple.money.format/simple.money.format.js"></script>*@
+    <script src="~/pages/Home/index.js"></script>
+}
+<input id="input-cotacao" hidden value="@Model.Cotacao" type="number" />
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <div class="row justify-content-center">
-        <div class="col-md-3">
+    <h1 class="display-4">Cotação Dólar</h1>
+    <div class="row justify-content-center fa-2x">
+        <div class="col-lg-5">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">R$</span>
+                    <span class="input-group-text font-size-2x" id="basic-addon1">R$</span>
                 </div>
-                <input type="text" class="form-control" placeholder="Reais" aria-label="Reais" aria-describedby="basic-addon1">
+                <input id="input-real" type="text" class="form-control font-size-2x" placeholder="Reais" aria-label="Reais">
             </div>
         </div>
-        <div class="col-md-1">
-            <i class="fas fa-exchange-alt fa-2x"></i>
+        <div class="col-lg-2">
+            <i class="fas fa-exchange-alt fa-2x pt-4 pb-4 d-lg-none"></i>
+            <i class="fas fa-exchange-alt fa-2x pt-4 pb-4 d-none d-lg-block"></i>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-5">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">$</span>
+                    <span class="input-group-text font-size-2x" id="basic-addon1">$</span>
                 </div>
-                <input type="text" class="form-control" placeholder="Dólares" aria-label="Dólares" aria-describedby="basic-addon1">
+                <input id="input-dolar" type="text" class="form-control font-size-2x" placeholder="Dólares" aria-label="Dólares">
             </div>
         </div>
     </div>
-    <p>Cotação de comprar: @Model.CotacaoCompra</p>
-    <p>Cotação de venda: @Model.CotacaoVenda</p>
+    <p>Data da cotação: @Model.DataFechamentoCotacao.ToShortDateString()</p>
+    <partial name="_dollarDescription.cshtml" />
 </div>

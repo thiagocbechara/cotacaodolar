@@ -1,8 +1,10 @@
+using System;
+
 namespace CotacaoDolar.Models
 {
     public class CotacaoMoeda
     {
-        public long CotacaoVenda { get; set; }
-        public long CotacaoCompra { get; set; }
+        public DateTime DataFechamentoCotacao { get; set; }
+        public long Cotacao { get; set; }
     }
 }
